@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KinectOpenTrack;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,15 @@ namespace KinectOpenTrackDemo
     {
         static void Main(string[] args)
         {
+
+            var opentrack = new OpenTrackInterface();
+            var kinect = new KinectTracker(opentrack);
+
+            kinect.Start();
+
+            Console.ReadLine();
+
+            kinect.Stop();
         }
     }
 }
